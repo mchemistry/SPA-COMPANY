@@ -1,0 +1,241 @@
+@keyframes slide-left
+  0%
+    opacity: 0.5
+    transform: translateX(280px)
+  100%
+    opacity: 1
+    transform: translateX(-20px)
+@keyframes slide-right
+  0%
+    opacity: 1
+  100%
+    opacity: 0.5
+    transform: translateX(280px)
+body
+  overflow-x: hidden
+  margin: 0
+  padding: 0
+  height: 100%
+  width: 100%
+  font-family: Arial, Helvetica, sans-serif
+  display: flex
+  justify-content: center
+  align-items: center
+  .notification 
+    position: fixed
+    display: none
+    right: 0
+    top: 50%
+    max-width: 280px
+    align-items: center
+    z-index: 9999  
+    border-radius: 6px
+    background: #F2F1F0
+    padding: 4px
+    font-size: 13px
+    p
+      display: flex
+      align-items: center
+      .icon-success
+        display: inline-block
+        transform: rotate(45deg)
+        height: 16px
+        margin: 0 10px
+        width: 8px
+        border-bottom: 3px solid #2f5805
+        border-right: 3px solid #466d1f
+      span
+        margin-left: 6px
+      .icon-error
+        margin-right: 18px
+      .icon-error:before
+        position: absolute
+        content: ""
+        display: inline-block
+        width: 16px
+        height: 3px
+        border-radius: 2px
+        background: red
+        transform: rotate(45deg)
+
+      .icon-error::after 
+        position: absolute
+        content: ""
+        display: inline-block
+        width: 16px
+        height: 3px
+        border-radius: 2px
+        background: red
+        transform: rotate(-45deg)
+  .error
+    border: 1px solid #aa1111 !important
+    border-left: 6px solid #aa1111 !important
+    color: #aa1111 !important
+  .success
+    border: 1px solid #58a55c
+    border-left: 6px solid #0e8a14
+    color: #0d5310
+    
+  .slide-left
+    animation: slide-left 0.3s forwards
+  .slide-right
+    animation: slide-right 0.3s forwards
+  .contact-container
+    width: 100%
+    height: auto
+    margin: 10px
+    border-radius: 5px
+    display: flex
+    padding: 15px
+    background-image: linear-gradient(to right,#c5adf1, #a5725e )
+    .contact__left-side
+      display: flex
+      flex: 1
+      flex-direction: column
+      padding-right: 10px
+      .contact_label
+        display: flex
+        flex-direction: column
+        margin-bottom: 10px
+        font-size: 14px
+        .contact-field--validate-error
+          color: #a30000
+          margin: 4px 0 0 4px
+        .contact-input
+          height: 36px
+          width: 100%
+          margin-top: 5px
+          padding-left: 10px
+          font-size: 13px
+          box-sizing: border-box
+          border: none
+          border-radius: 5px
+          &:focus
+            outline: hidden
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+          &[type="number"]
+            -moz-appearance: textfield
+          &:disabled
+            cursor: not-allowed
+          &:invalid
+            outline: hidden !important
+            border: none !important
+            box-shadow: none
+          &:required
+            outline: hidden !important
+            border: none !important
+            box-shadow: none
+      .contact__form--explain
+        margin: 10px 0 10px 4px
+        color: #1f8539
+      .contact-btn-submit
+        width: 100%
+        margin: auto
+        margin-top: 10px
+        height: 40px
+        text-align: center
+        color: white
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 5px
+        font-size: 14px
+        background: #4E3284
+        cursor: pointer
+        border: none
+        transition: all 0.3s
+        &:disabled
+          cursor: not-allowed
+          background: #675d7cd2
+          &:hover
+            cursor: not-allowed
+            background: #675d7cd2
+            
+        .three-dot-loading
+          display: none
+          span
+            width: 0.5rem
+            height: 0.5rem
+            margin-right: 0.4rem
+            border-radius: 100%
+            -webkit-animation: bouncedelay 1.4s infinite ease-in-out both
+            animation: bouncedelay 1.2s infinite ease-in-out both
+          &--bounce1
+            background-color: #fff
+            -webkit-animation-delay: -0.32s !important
+            animation-delay: -0.32s !important
+          &--bounce2
+            background-color: #f78
+            -webkit-animation-delay: -0.16s !important
+            animation-delay: -0.16s !important
+          &--bounce3
+            background-color: #f00
+        &:hover
+          background: #54388bd2
+          outline: hidden
+          border: none
+      .message
+        .contact-subject
+          resize: none
+          border: none
+          width: 100%
+          box-sizing: border-box
+          border-radius: 5px
+          padding-left: 10px
+          padding-top: 5px
+          font-size: 12px
+          box-shadow: none !important
+          &:focus:invalid
+            outline: hidden !important
+            border: none !important
+            box-shadow: none !important
+          &:disabled
+            cursor: not-allowed
+          &:invalid
+            outline: hidden !important
+            border: none !important
+            box-shadow: none !important
+          &:required
+            outline: hidden !important
+            border: none !important
+            box-shadow: none !important
+        .contact-field--validate-error
+          color: #a30000
+          margin: 4px 0 0 4px
+    .contact-side__title
+      color: #ffffff
+      font-size: 14px
+      text-align: center
+      border-bottom: 1px solid #e6e3e3a2
+      padding: 10px 0
+      text-transform: uppercase
+      display: none
+  
+    .contact__right-side
+      flex: 1
+      margin-left: 5px
+      display: flex
+      position: relative
+      flex-direction: column
+      overflow: hidden
+      iframe
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        width: 100%
+        border-radius: 2px
+@media screen and ( max-width:  600px)
+  .contact-container
+    flex-direction: column
+    width: auto
+    padding: 0 15px 15px 15px !important
+    height: 750px !important
+    margin: 0 5px
+    .contact-side__title
+      display: block !important
+    .contact__right-side
+      margin: 0

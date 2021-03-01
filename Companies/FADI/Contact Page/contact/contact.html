@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./override/index.css">
+    <script
+			  src="https://code.jquery.com/jquery-1.12.4.min.js"
+			  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets//jquery.js"></script>
+</head>
+<body>
+  <div class="notification">
+    <p><i class="icon-success"></i><i class="icon-error"></i><span class="contact-message">Gửi tin nhắn thành công, chúng tôi sẽ sớm liên hệ với bạn!</span></p>
+  </div>
+    <div class="contact-container">
+        <p class="contact-side__title">
+          Nhận tư vấn hỗ trợ
+         </p>
+       <form class="contact__left-side" id="form-contact">
+         <label for="name" class="contact_label">
+          <span>Họ tên <span style="color: red; font-size: 16px;">*</span></span> 
+           <input  class="contact-input" id="fullname" value="1" type="text" name="name" placeholder="Nhập tên của bạn..." required>
+         </label>
+         <label for="phone" class="contact_label">
+           <span>Số điện thoại <span style="color: red; font-size: 16px;">*</span></span> 
+           <input class="contact-input" id="phone" value="11" type="number" name="phone" placeholder="Nhập số điện thoại của bạn..." required>
+         </label>
+         <div class="message">
+           <label for="subject" class="contact_label">
+            <span>Nội dung cần hỗ trợ <span style="color: red; font-size: 16px;">*</span></span> 
+           </label>
+           <textarea class="contact-subject" name="subject" id="subject" rows="10" placeholder="Nhập nội dung hỗ trợ..." required></textarea>
+         </div>
+         <button type="submit" class="contact-btn-submit" type="submit">
+           <span class="contact-btn--submit-text">Gửi thông tin</span>
+           <div class="three-dot-loading">
+             <span class="three-dot-loading--bounce1"></span>
+             <span class="three-dot-loading--bounce2"></span>
+             <span class="three-dot-loading--bounce3"></span>
+           </div>
+         </button>
+       </form>
+       <span></span>
+       <p class="contact-side__title">Chúng tôi trên google map</p>
+       <div class="contact__right-side">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.491066421004!2d106.06453591442381!3d20.27993121829551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3136754b6af1b95d%3A0xac4ec23fd4188177!2sTAM%20QUANG!5e0!3m2!1svi!2s!4v1613831355305!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       </div>
+      </div>
+</body>
+</html>
